@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-neutral-50 text-neutral-800;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold leading-tight;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+  
+  p, li, span {
+    @apply leading-relaxed;
+  }
+
+  pre, code {
+    @apply font-mono;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply bg-white text-primary-500 border border-primary-500 hover:bg-primary-50 focus:ring-primary-500;
+  }
+  
+  .btn-danger {
+    @apply bg-error-500 text-white hover:bg-error-700 focus:ring-error-500;
+  }
+
+  .btn-success {
+    @apply bg-success-500 text-white hover:bg-success-700 focus:ring-success-500;
+  }
+  
+  .form-input {
+    @apply w-full p-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 transition-all duration-200;
+  }
+  
+  .question-number {
+    @apply flex items-center justify-center w-10 h-10 rounded-md text-sm font-medium cursor-pointer transition-all duration-200;
+  }
+  
+  .question-number-not-answered {
+    @apply bg-white text-neutral-700 border border-neutral-300 hover:bg-neutral-100;
+  }
+  
+  .question-number-answered {
+    @apply bg-primary-500 text-white border border-primary-500 hover:bg-primary-600;
+  }
+  
+  .question-number-marked {
+    @apply bg-secondary-500 text-white border border-secondary-500 hover:bg-secondary-600;
+  }
+  
+  .question-number-not-visited {
+    @apply bg-neutral-200 text-neutral-600 border border-neutral-300;
+  }
+
+  .code-block {
+    @apply font-mono text-sm bg-neutral-50 rounded-md p-4 my-4 whitespace-pre-wrap border border-neutral-200 overflow-x-auto;
+  }
+}

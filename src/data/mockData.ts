@@ -1,0 +1,586 @@
+import { Test } from '../types';
+
+// Valid student codes
+export const validCodes: string[] = [
+  'BJFiuq', 'iL2W15', 'n3kED3', 'xvkxaZ', 'yvPkAp', 'hps5pi', 'EKbFDe', 'fWWN21', 'laFOSJ', '2PBIum', 'SOvK3T', 'NZKngj', '9n36y7', 'rhtaaD', 'e5DMvp', 'CEsg3q', 'Sdi3QG', 'flxEvl', 'VhiOQQ', 'a1Fcql', 'nhmrlp', 'TUm7er', 'hbWNrn', 'c8RPbD', 'gdABRN', '1xdaTX', '8PzI1I', 'WMSK85', 'Kbh3BF', 'LwIXun', 'zCFruU', 'Q8ygmG', 'soPnkV', 'kxUyak', 'N5OqF1', 'wdLFY0', 'kRebzk', 'njx18V', 'gfOrtE', 'wJaL1k', 'FaAbrz', 'buYb7f', 'R4PihZ', 'YKsFYI', 'MvXOCv', 'MlL0qA', 'CIxJZk', 'S0aVwn', 'kZuAY6' // For testing
+];
+
+// Mock test data
+export const mockTests: Test[] = [
+  {
+    id: 'gate-cs-mock-1',
+    name: 'C-Programming Test-1 (Basic Level)',
+    duration: 40, // 3 hours
+    total_marks: 25,
+    negative_marking: true,
+    questions: [
+      {
+        id: 1,
+        type: 'mcq',
+        marks: 1,
+        negative_marking: true,
+        question: 'What will be the output of the following code?\n\n#include <stdio.h>\nint main() {\n    int a = 5, b = 2;\n    printf("%d", a+++b);\n    return 0;\n}\n',
+        options: ['7', '8', 'Compilation Error', 'Undefined Behavior'],
+        answer: '7'
+      },
+      {
+        id: 2,
+        type: 'mcq',
+        marks: 1,
+        negative_marking: true,
+        question: 'Which of the following is true about function calls in C?',
+        options: [
+          'Call by Value allows modification of the original variable.',
+          'Call by Reference is directly supported using pointers.',
+          'Recursive functions cannot have a return statement.',
+          'Functions cannot return structure variables.'
+        ],
+        answer: 'Call by Reference is directly supported using pointers.'
+      },
+      {
+        id: 3,
+        type: 'mcq',
+        marks: 1,
+        negative_marking: true,
+        question: 'What will be the output?\n\n#include <stdio.h>\nint main() {\n    int arr[] = {10, 20, 30, 40};\n    int *ptr = arr;\n    printf("%d", *(ptr + 2));\n    return 0;\n}\n',
+        options: ['10', '20', '30', '40'],
+        answer: '30'
+      },
+      {
+        id: 4,
+        type: 'mcq',
+        marks: 1,
+        negative_marking: true,
+        question: 'What is the correct way to declare a 2D array in C?',
+        options: [
+          'int arr[][] = {{1,2}, {3,4}};',
+          'int arr[2][2] = {1,2,3,4};',
+          'int arr[][2] = {1,2,3,4};',
+          'Both (B) and (C)'
+        ],
+        answer: 'Both (B) and (C)'
+      },
+      {
+        id: 5,
+        type: 'mcq',
+        marks: 1,
+        negative_marking: true,
+        question: 'What is the size of the following structure?\nc\nstruct test {\n    char a;\n    int b;\n    float c;\n};\n\n(Assume `int` takes 4 bytes, `float` takes 4 bytes, and `char` takes 1 byte)',
+        options: ['9 bytes', '12 bytes', '8 bytes', '6 bytes'],
+        answer: '12 bytes'
+      },
+      {
+        id: 6,
+        type: 'mcq',
+        marks: 1,
+        negative_marking: true,
+        question: 'Which function is used to deallocate memory in C?',
+        options: ['free()', 'delete()', 'remove()', 'clear()'],
+        answer: 'free()'
+      },
+      {
+        id: 7,
+        type: 'mcq',
+        marks: 1,
+        negative_marking: true,
+        question: 'Which mode opens a file for both reading and writing?',
+        options: ['"r"', '"w+"', '"a"', '"r+"'],
+        answer: '"r+"'
+      },
+      {
+        id: 8,
+        type: 'mcq',
+        marks: 1,
+        negative_marking: true,
+        question: 'What does `#include <stdio.h>` do?',
+        options: [
+          'Includes a user-defined header file.',
+          'Includes a standard input-output library.',
+          'Defines a macro.',
+          'Declares a function.'
+        ],
+        answer: 'Includes a standard input-output library.'
+      },
+      {
+        id: 9,
+        type: 'mcq',
+        marks: 1,
+        negative_marking: true,
+        question: 'What is the output?\n#include <stdio.h>\nint fun(int n) {\n    if (n == 0) return 1;\n    return n * fun(n - 1);\n}\nint main() {\n    printf("%d", fun(5));\n    return 0;\n}\n',
+        options: ['120', '24', '15', '1'],
+        answer: '120'
+      },
+      {
+        id: 10,
+        type: 'mcq',
+        marks: 1,
+        negative_marking: true,
+        question: 'Which function is used to compare two strings in C?',
+        options: ['strcmp()', 'strcat()', 'strlen()', 'strcpy()'],
+        answer: 'strcmp()'
+      },
+      {
+        id: 11,
+        type: 'msq',
+        marks: 2,
+        negative_marking: false,
+        question: 'Which of the following are correct ways to access the 3rd element of an array `int arr[5]`?',
+        options: ['arr[2]', '*(arr + 2)', '2[arr]', '*arr + 2'],
+        answer: ['arr[2]', '*(arr + 2)', '2[arr]']
+      },
+      {
+        id: 12,
+        type: 'msq',
+        marks: 2,
+        negative_marking: false,
+        question: 'Which of the following storage classes have a global scope?',
+        options: ['auto', 'static', 'extern', 'register'],
+        answer: ['static', 'extern']
+      },
+      {
+        id: 13,
+        type: 'msq',
+        marks: 2,
+        negative_marking: false,
+        question: 'Which of the following functions are used for dynamic memory allocation in C?',
+        options: ['malloc()', 'calloc()', 'realloc()', 'alloc()'],
+        answer: ['malloc()', 'calloc()', 'realloc()']
+      },
+      {
+        id: 14,
+        type: 'msq',
+        marks: 2,
+        negative_marking: false,
+        question: 'Which of the following statements about structures and unions are true?',
+        options: [
+          'Structures allocate memory for all members separately.',
+          'Unions share memory among all members.',
+          'The size of a union is the sum of all its members.',
+          'Structures cannot have bit-fields.'
+        ],
+        answer: ['Structures allocate memory for all members separately.', 'Unions share memory among all members.']
+      },
+      {
+        id: 15,
+        type: 'msq',
+        marks: 2,
+        negative_marking: false,
+        question: 'Which of the following are valid file operations in C?',
+        options: ['fopen()', 'fread()', 'fwrite()', 'fdelete()'],
+        answer: ['fopen()', 'fread()', 'fwrite()']
+      },
+      {
+        id: 16,
+        type: 'nat',
+        marks: 1,
+        negative_marking: true,
+        question: 'What will be the output of the following code?\n\n#include <stdio.h>\nint main() {\n    int x = 10, y = 5;\n    printf("%d", x / y + 3 * 2);\n    return 0;\n}\n',
+        answer: 8
+      },
+      {
+        id: 17,
+        type: 'nat',
+        marks: 1,
+        negative_marking: true,
+        question: 'How many times will the function `fact()` be called for `fact(5)`?\n\nint fact(int n) {\n    if (n <= 1) return 1;\n    return n * fact(n - 1);\n}\n',
+        answer: 5
+      },
+      {
+        id: 18,
+        type: 'nat',
+        marks: 1,
+        negative_marking: true,
+        question: 'What will be the value of `*ptr` after execution?\n\nint a = 10, *ptr = &a;\n*ptr = *ptr + 5;\n',
+        answer: 15
+      },
+      {
+        id: 19,
+        type: 'nat',
+        marks: 1,
+        negative_marking: true,
+        question: 'What is the index of the last element in an array `int arr[100]`?',
+        answer: 99
+      },
+      {
+        id: 20,
+        type: 'nat',
+        marks: 1,
+        negative_marking: true,
+        question: 'What is the output of `5 & 3`?',
+        answer: 1
+      }
+    ]
+  },
+  {
+    id: 'gate-cs-mock-2',
+    name: 'C-Programming Test-2 (Moderate Level)',
+    duration: 40, // 3 hours
+    total_marks: 26,
+    negative_marking: true,
+    questions: [
+      {
+        "id": 1,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": true,
+        "question": "What is the output of the following program?\n\n#include<stdio.h>\nint main()\n{\n    int i = 0;\n    switch(i) {\n    case 0 : i++;\n    case 1 : i=i++;\n    case 2 : ++i;\n    }\n    printf(\"%d\",i++);\n    return 0;\n}",
+        "options": ["5", "2", "3", "4"],
+        "answer": "2"
+      },
+      {
+        "id": 2,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": true,
+        "question": "Which is the correct syntax to declare a pointer?",
+        "options": [
+          "int *const constPtr;",
+          "*int constant constPtr;",
+          "const int *constPtr;",
+          "A and C both"
+        ],
+        "answer": "A and C both"
+      },
+      {
+        "id": 3,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": true,
+        "question": "What will be the output of the following program?\n\n#include<stdio.h>\nint main()\n{\n    char *name=\"INDIA\";\n    int x;\n    char *cptr = name;\n    while(*cptr != '\\0')\n    {\n        cptr++;\n    }\n    x = cptr - name;\n    printf(\"%d\", x);\n    return 0;\n}",
+        "options": ["4", "5", "6", "Compilation Error"],
+        "answer": "5"
+      },
+      {
+        "id": 4,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": true,
+        "question": "What is the output of the following c code?\n\n#include<stdio.h>\nint main(){\n    int a=1, b=2;\n    if(--a && b--)\n        printf(\"%d %d\", b,a);\n    else\n        printf(\"%d %d\", a,b);\n    return 0;\n}",
+        "options": ["1 2", "0 2", "1 1", "0 1"],
+        "answer": "0 2"
+      },
+      {
+        "id": 5,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": true,
+        "question": "Select the correct explanation for the following declaration:\nint (*(*ptr)(int)) (void);",
+        "options": [
+          "ptr is a pointer pointing to an integer function that takes an int value and returns an integer which will point to a function with no argument",
+          "ptr is pointer to function that takes an int value returns a pointer to a function with no argument which returns an integer",
+          "None of the above two point",
+          "This is not a valid C statement"
+        ],
+        "answer": "ptr is pointer to function that takes an int value returns a pointer to a function with no argument which returns an integer"
+      },
+      {
+        "id": 6,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": true,
+        "question": "In C, arguments to a function are always",
+        "options": [
+          "Passed by value (i.e. the called function is given the values of its arguments in temporary variables rather than the originals)",
+          "Passed by reference (i.e. the called function has access to the original argument, not a local copy)",
+          "Non-pointer variables are passed by value and pointers are passed by reference",
+          "None of these"
+        ],
+        "answer": "Passed by value (i.e. the called function is given the values of its arguments in temporary variables rather than the originals)"
+      },
+      {
+        "id": 7,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": true,
+        "question": "What is the output of this C code?\n\n#include<stdio.h>\nstatic int x = 7;\nvoid main()\n{\n    x = 8;\n    {\n        int x = 10;\n    }\n    printf(\"%d\", x);\n}",
+        "options": ["7", "8", "10", "Compilation Error"],
+        "answer": "8"
+      },
+      {
+        "id": 8,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": true,
+        "question": "What will be output if you will compile and execute the following c code?\n\n#include<stdio.h>\nint main()\n{\n    int a[2][4]={3,6,9,12,15,18,21,24};\n    printf(\"%d %d %d\", *(a[1]+2), *(*(a+1)+2), 2[1[a]]);\n    return 0;\n}",
+        "options": ["21 21 21", "9 9 9", "18 18 18", "Compilation Error"],
+        "answer": "21 21 21"
+      },
+      {
+        "id": 9,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": true,
+        "question": "What will be output of the following C program?\n\n#include<stdio.h>\nint main()\n{\n    int b[4]={5,1,32,4};\n    int k,i,m;\n    k=++b[1];\n    i=b[1]++;\n    m=b[k++];\n    printf(\"%d, %d, %d\", k,i,m);\n    return 0;\n}",
+        "options": ["3, 2, 32", "2, 3, 32", "3, 2, 4", "Compilation Error"],
+        "answer": "3, 2, 32"
+      },
+      {
+        "id": 10,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": true,
+        "question": "What is the output of the following c code?\n\n#include<stdio.h>\n#include<string.h>\n#include<stdlib.h>\nint main()\n{\n    FILE *fp;\n    fp=fopen(\"abc.c\", 'w');\n    fputs(\"Hello\", fp);\n    if(fp == NULL)\n    {\n        printf(\"\\nUnable to open file\");\n        exit();\n    }\n    fclose(fp);\n    return 0;\n}",
+        "options": [
+          "This will not create a file",
+          "This will create a file and put Hello in the file",
+          "It will print Unable to open the file",
+          "None of the above"
+        ],
+        "answer": "This will create a file and put Hello in the file"
+      },
+      {
+        "id": 11,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "Which of the following options can be put in the blank space of the printf in the line 13 to print the value \"1\"?\n\n#include<stdio.h>\nstruct out {\n    struct in\n    {\n        char c;\n        int d;\n    }s1;\n}a1, *pa1;\nint main()\n{\n    pa1=&a1;\n    a1.s1.c='1';\n    printf(\"%c\", …… ); // line 13\n    return 0;\n}",
+        "options": ["pa1->s1.c", "pa1.s1.c", "a1->s1.c", "All of the above"],
+        "answer": "pa1->s1.c"
+      },
+      {
+        "id": 12,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "What is the output of the following c code?\n\n#include <stdio.h>\nint main(void) {\n    int c;\n    for ( ; ; ) {\n        c = getchar();\n        if (c == EOF) break;\n        if ((c >= 97) && (c < 123))\n            c -= 32;\n        putchar(c);\n    }\n    return 0;\n}",
+        "options": [
+          "The given program checks the ASCII is between 97 and 123",
+          "The given program checks the size of the file",
+          "The given program converts the small case letters to the uppercase letters",
+          "None of these"
+        ],
+        "answer": "The given program converts the small case letters to the uppercase letters"
+      },
+      {
+        "id": 13,
+        "type": "nat",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "What is the output of the following c code?\n\n#include<stdio.h>\nint mystery(int n) {\n    int v1 = 2;\n    int v2 = 1;\n    while (n > 0) {\n        if (n % 2 == 1)\n            v2 = v1 * v2;\n        v1 = v1 * v1;\n        n = n / 2;\n    }\n    return v2;\n}\nint main()\n{\n    printf(\"%d\", mystery(10));\n    return 0;\n}",
+        "answer": "1024"
+      },
+      {
+        "id": 14,
+        "type": "nat",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "What is the output of the following c code?\n\n#include<stdio.h>\nint func(int p)\n{\n    static int r;\n    if(p <= 0)\n        return 1;\n    if(p>10)\n    {\n        r = p;\n        return func(p - 10)+r;\n    }\n    return func(p-5)+r;\n}\nint main()\n{\n    printf(\"%d\", func(20));\n    return 0;\n}",
+        "answer": "61"
+      },
+      {
+        "id": 15,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "What is the output of the following c code?\n\n#include <stdio.h>\n#include <string.h>\nint main() {\n    char s[90];\n    char *p = s;\n    strcpy(s, \"12345-\");\n    strcat(p, \"ABCDE\");\n    p += 6;\n    *(--p) = '\\0';\n    p+=1;\n    printf(\"(%s) (%s)\\n\", s, p);\n    return 0;\n}",
+        "options": [
+          "(12345) (ABCDE)",
+          "(ABCDE) (12345)",
+          "Segmentation fault",
+          "Compilation Error"
+        ],
+        "answer": "(12345) (ABCDE)"
+      },
+      {
+        "id": 16,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "What is the output of the following c code?\n\n#include<stdio.h>\nvoid fun(int*, int);\nvoid (*ptr[1])(int*, int);\nint main()\n{\n    int a = 2;\n    int b = 4;\n    ptr[0] = fun;\n    ptr[0](&a, b);\n    printf(\"%d %d \", a, b);\n    return 0;\n}\nvoid fun(int *p, int q)\n{\n    int tmp = *p;\n    *p = q;\n    q = tmp;\n}",
+        "options": ["2 2", "4 2", "4 4", "2 4"],
+        "answer": "4 4"
+      },
+      {
+        "id": 17,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "Find the output of the following c program?\n\n#include<stdio.h>\nint main() {\n    char *a[] = {\"GATE\", \"with\", \"Arpit\", \"2026\"};\n    char **b[] = {a+2, a+1, a+3, a}, ***c;\n    c = b;\n    ++c;\n    printf(\"%s\", *(*(c)+1));\n}",
+        "options": ["GATE", "rpit", "it", "026"],
+        "answer": "rpit"
+      },
+      {
+        "id": 18,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "What is the output of the following c program?\n\n#include<stdio.h>\n#define prn(a) printf(\"%d\", a)\n#define print(a,b,c) prn(a), prn(b), prn(c)\n#define max(a,b) (a<b)? b : a\nint main()\n{\n    int x=1, y=2;\n    print(max(x++,y),x,y);\n    return 0;\n}",
+        "options": ["2 2 2", "3 3 2", "3 2 3", "Compilation Error"],
+        "answer": "2 2 2"
+      }
+    ]
+  },
+  {
+    id: 'gate-cs-mock-3',
+    name: 'Theory of Computation (Bisic Level)',
+    duration: 30, // 3 hours
+    total_marks: 24,
+    negative_marking: true,
+    questions: [
+      {
+        "id": 1,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "How many states are required in minimal DFA for regular expression \( (a*b* + b*(a*b*)* + ab) \) on alphabet \(\Sigma = \{a, b\}\)?",
+        "options": ["3", "4", "5", "1"],
+        "answer": "1"
+      },
+      {
+        "id": 2,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Let \( L_1 = a*b* \) and \( L_2 = b*a* \). What is \( L_1 - L_2 \)?",
+        "options": ["\(\phi\)", "\(\epsilon\)", "\(a^+b^+\)", "\(a* + b*\)"],
+        "answer": "\(a^+b^+\)"
+      },
+      {
+        "id": 3,
+        "type": "nat",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "For regular expression \((ab*b + a)(bba)(a*b*)(a + b)\), the length of the shortest string is ______.",
+        "answer": "5"
+      },
+      {
+        "id": 4,
+        "type": "msq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Which strings are generated by the regular expression \((10* + 1)* U (11 + 0)*\)?",
+        "options": ["1011011", "0110110", "0001110", "1111111"],
+        "answer": ["1011011", "0110110", "1111111"]
+      },
+      {
+        "id": 5,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "For \(L = \{w_1 aa w_2 | w_1, w_2 belongs to \{a, b\}^*, |w_1| < 3, |w_2| <+ 1\}\), which regular expression is correct?",
+        "options": [
+          "\((e + a + b)^3\) aa \((a + b)\)",
+          "\((a + b)^3\) aa \((a + b)\)",
+          "\((e + a + b)^2\) aa \((e + a + b)\)",
+          "\((a + b)^2\) aa \((a + b)\)"
+        ],
+        "answer": "\((e + a + b)^2\) aa \((e + a + b)\)"
+      },
+      {
+        "id": 6,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "Which statements about language complements are correct?\nS1: Complement of finite language is always infinite.\nS2: Complement of infinite language can be finite.\nS3: Complement of infinite language can be infinite.\nS4: Complement of infinite language is always finite.",
+        "options": [
+          "S1 and S2",
+          "S1, S2, and S4",
+          "S1, S2, and S3",
+          "S1 and S4"
+        ],
+        "answer": "S1, S2, and S3"
+      },
+      {
+        "id": 7,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "Given \(L = \{ab, ba, aa, b\}\), what is the highest power of \(L\) to generate 'aaabbabb'?",
+        "options": ["\(L^5\)", "\(L^4\)", "\(L^6\)", "None"],
+        "answer": "\(L^5\)"
+      },
+      {
+        "id": 8,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "For \(L = \{a^n >= 0\}\), what is the regular expression for \(L^3\)?",
+        "options": [
+          "\(\{a^{3n} | n>=0\}\)",
+          "\(\{a^n | n >= 0\}\)",
+          "\(\{a^{3}^{n} | n >= 0\}\)",
+          "None"
+        ],
+        "answer": "\(\{a^n \mid n \geq 0\}\)"
+      },
+      {
+        "id": 9,
+        "type": "nat",
+        "marks": 2,
+        "negative_marking": false,
+        "question": "How many states are needed for \(L = \{a^m b^n c^q | m, n, q >= 0\}\) on \(\Sigma = \{a, b, c\}\)?",
+        "answer": "4"
+      },
+      {
+        "id": 10,
+        "type": "nat",
+        "marks": 2,
+        "negative_marking": false,
+        "question": "Consider the Language L on the set {a,b}, L={Set of all the strings where the number of a is 2 and the no. of b are even}. How many states are requered to construct the DFA of complement of L?",
+        "answer": "7"
+      },
+      {
+        "id": 11,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "For language \( L = \{ w | w \in \{a, b\}*, |w| = 4 \} \), how many states are required in an NFA?",
+        "options": ["4", "5", "6", "None of these"],
+        "answer": "5"
+      },
+      {
+        "id": 12,
+        "type": "nat",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "For language \( L = \{ X a w | X, w \in \{a, b\}*, |X| = 1 \} \), what is the minimum number of states in an NFA?",
+        "answer": "3"
+      },
+      {
+        "id": 13,
+        "type": "nat",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "Given \( L_1 = a* b* \), \( L_2 = b* a* \), \( L_3 = (a + b)* \), \( L_4 = a*b*a* \), and \( L = (L_1 U L_2) - (L_3 U L_4) \), how many strings are in \( L \)?",
+        "answer": "0"
+      },
+      {
+        "id": 14,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "For the regular expression \( R = (a + b)*(a + b)^2 (a + b)* \), how many equivalence classes exist?",
+        "options": ["2", "3", "4", "None"],
+        "answer": "3"
+      },
+      {
+        "id": 15,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "What is the correct regular expression for complemet of \( L = (a + b)*ab(a + b)* \)?",
+        "options": [
+          " (a + b)*(ab + ba + bb + aa) + \epsilon ",
+          " (a*b*)* (ba + bb + aa) (a*b*)* + a + b ",
+          " (a + b)* ba (a + b)* + a + b ",
+          " (a + b)* (ba + bb + aa) (a + b)* + \epsilon + a + b "
+        ],
+        "answer": " (a + b)* (ba + bb + aa) (a + b)* + \epsilon + a + b "
+      },
+      {
+        "id": 16,
+        "type": "msq",
+        "marks": 2,
+        "negative_marking": true,
+        "question": "Which statements about DFAs/NFAs are correct? [sigma = {a,b}]",
+        "options": [
+          "For \( L = \{ w | |w| = 5 \} \), minimal DFA has 7 states.",
+          "For \( L = \{ w | |w| <= 5 \} \), minimal NFA has 6 states.",
+          "For \( L = \{ w | 6th symbol from brgain is 'a'}, minimal DFA has 64 states.",
+          "For \( L = \{ w | 10th symbol from end is 'a'}, minimal DFA has 1024 states."
+        ],
+        "answer": ["For \( L = \{ w | |w| = 5 \} \), minimal DFA has 7 states.", "For \( L = \{ w | |w| <= 5 \} \), minimal NFA has 6 states.", "For \( L = \{ w | 10th symbol from end is 'a'}, minimal DFA has 1024 states."]
+      }
+    ]
+  },
+];
