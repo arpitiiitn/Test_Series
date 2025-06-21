@@ -583,4 +583,368 @@ export const mockTests: Test[] = [
             }
         ]
     },
+    {
+    id: 'gate-cs-mock-4',
+    name: 'Compiler Design (Basic Level)',
+    duration: 70, // 3 hours
+    total_marks: 34,
+    negative_marking: true,
+    questions: [
+      {
+        "id": 1,
+        "type": "nat",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Consider G be a grammar with the following productions: \nA → A + B | B; \nB → B * C | C; \nC → (A); \nC → id.\nLet, X is set of lookaheads in A→. B and Y is set of lookaheads in C→ .id. Then how many numbers of items are present in X ∩ Y if LR (1) parser is used?",
+        "answer": "3"
+      },
+      {
+        "id": 2,
+        "type": "msq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Which of the following statement is/are correct?",
+        "options": [
+          "LALR parser is more powerful the SLR parser.",
+          "SLR parser is more powerful the CLR parser.",
+          "LR (0) is the least powerful parser.",
+          "CLR is powerful that LALR and LR(0) parser."
+        ],
+        "answer": ["LALR parser is more powerful the SLR parser.", "LR (0) is the least powerful parser.","CLR is powerful that LALR and LR(0) parser."]
+      },
+      {
+        "id": 3,
+        "type": "msq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Which of the following is/are incorrect.",
+        "options": [
+          "Every regular grammar is LL(1).",
+          "If given grammar G is LL(1) then it is LR(0).",
+          "Let SLR(1) has \( x1 \) states and CLR(1) has \( x2 \) states then the relation between \( x1 \) and \( x2 \) is \( x1 < x2 \).",
+          "Recursive descent parser is a top - down parser."
+        ],
+        "answer": ["Every regular grammar is LL(1).", "If given grammar G is LL(1) then it is LR(0).", "Let SLR(1) has \( x1 \) states and CLR(1) has \( x2 \) states then the relation between \( x1 \) and \( x2 \) is \( x1 < x2 \)."]
+      },
+      {
+        "id": 4,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Consider the given grammar \nX→ a | ab|abc.\nThe given grammar is ______.",
+        "options": ["LL(1)", "LL(2)", "LL(3)", "None of these"],
+        "answer": "LL(3)"
+      },
+      {
+        "id": 5,
+        "type": "nat",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Consider the following grammar. \nS’ → S; \nS’ → S*A | A; \nA → A+B | B; \nB → B−C | C; \nC → (S) | id.\nIf I0 is the set of LR(0) items {[S’→S.] [S→S.*A]}, then goto (closure (I0, *) contains exactly ______ items.",
+        "answer": "7"
+      },
+      {
+        "id": 6,
+        "type": "nat",
+        "marks": 2,
+        "negative_marking": false,
+        "question": "Consider the given grammar. \nS → A; \nA → ABC | BC; \nB → Cc| b | e; \nC → e.\nHow many number of unique production are in goto (A→A·BC) ∪ goto (A→ ·BC)?",
+        "answer": "4"
+      },
+      {
+        "id": 7,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": false,
+        "question": "Consider the following grammars. \nG₁: S→aSbS | bSaS|e; \nG₂: S→aABA; \n\tA→c|e; \n\tB→d|e. \nWhich of the following is correct?",
+        "options": [
+          "Only G₁ is LL(1).",
+          "Only G₂ is LL(1).",
+          "Both G₁ and G₂ are LL(1).",
+          "Neither of G₁ and G₂ are LL(1)."
+        ],
+        "answer": "Only G₂ is LL(1)."
+      },
+      {
+        "id": 8,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": false,
+        "question": "Consider the following grammar. \nS → (A | B ) | B); \nA → B) | B ); \nB → e. \nWhich of the following is correct statement if CLR(1) parser is used?",
+        "options": [
+          "The given grammar has RR conflict but no SR conflicts.",
+          "The given grammar has RR conflict but no RR conflicts.",
+          "The given grammar has RR and SR conflicts.",
+          "The given grammar do not have RR and SR conflicts."
+        ],
+        "answer": "The given grammar do not have RR and SR conflicts."
+      },
+      {
+        "id": 9,
+        "type": "msq",
+        "marks": 2,
+        "negative_marking": false,
+        "question": "Which of the following statement is/are correct about given language? \nL = {a' b\" c\" | l = m or m = n , l, m, n >0}",
+        "options": [
+          "The language is not LR(0).",
+          "The language is ambiguous.",
+          "The language is not LR(k) for any k.",
+          "The language recognizes by DPDA (Deterministic Pushdown Automata.)"
+        ],
+        "answer": ["The language is not LR(0).","The language is ambiguous.","The language is not LR(k) for any k."]
+      },
+      {
+        "id": 10,
+        "type": "mcq",
+        "marks": 2,
+        "negative_marking": false,
+        "question": "Consider the given grammar. \nS → AaB|aA; \nA→ bB| B; \nB→ aB|a. \nIf S, A, B are non-terminals and a, b are terminals. The above grammar is?",
+        "options": [
+          "LALR(1) but not SLR(1)",
+          "CLR(1) but not LALR(1)",
+          "CLR(1) and LALR(1)",
+          "Neither CLR (1) nor LALR(1)"
+        ],
+        "answer": "Neither CLR (1) nor LALR(1)"
+      },
+      {
+        "id": 11,
+        "type": "msq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Three address codes can be implemented using",
+        "options": [
+          "Quadruples",
+          "Direct quadruples",
+          "Triples",
+          "Indirect triples"
+        ],
+        "answer": ["Quadruples", "Triples", "Indirect triples"]
+      },
+      {
+        "id": 12,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "A synthesized attribute is an attribute whose value at a parse tree node depends on.",
+        "options": [
+          "Attribute at parent node only",
+          "Attribute at children node only",
+          "Attribute at siblings only",
+          "None of these"
+        ],
+        "answer": "Attribute at children node only"
+      },
+      {
+        "id": 13,
+        "type": "msq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Which of the following is/are an intermediate representation of the source program in compilers?",
+        "options": [
+          "Three address code",
+          "Directed Acyclic Graph (DAG)",
+          "Control Flow Graph (CFG)",
+          "Symbol table"
+        ],
+        "answer": ["Three address code","Directed Acyclic Graph (DAG)","Control Flow Graph (CFG)"]
+      },
+      {
+        "id": 14,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Which of the following is not performed during compilation?",
+        "options": [
+          "Dynamic memory allocation",
+          "Type checking",
+          "Symbol table management",
+          "None of these"
+        ],
+        "answer": "Dynamic memory allocation"
+      },
+      {
+        "id": 15,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Consider the basic block given below: \na = b + c; \nc = a + d; \nd = b + c; \ne = d - b; \na = e + b. \nThe minimum number of nodes and edges present in the DAG representation of the above basic block respectively are:",
+        "options": [
+          "6 and 6",
+          "4 and 4",
+          "8 and 10",
+          "9 and 12"
+        ],
+        "answer": "6 and 6"
+      },
+      {
+        "id": 16,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Consider the following psedo code: \n1 : a = 0; \n2 : b = a + 1; \n3 : c = c + b; \n4 : a = b * 2; \n5 : if (a < a) goto 2; \n6 : return c. \nWhich of the following is correct live range for variable b?",
+        "options": [
+          "2 → 3 → 4 → 5",
+          "1 → 2 → 3 → 4",
+          "3 → 4 → 5 → 2",
+          "2 → 3 → 4"
+        ],
+        "answer": "2 → 3 → 4"
+      },
+      {
+        "id": 17,
+        "type": "nat",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Consider the following three-addresses code. \nt1 = a + b; \nt2 = c + d; \nt3 = t1 * t2; \nt4 = t2 + t2; \nt5 = t4 + t3. \nWhat will be the minimum number of temporary variable in equivalent optimized three-address code of above code?",
+        "answer": "2"
+      },
+      {
+        "id": 18,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Consider the following SDT. \nE → XY {Y: a = X: a}; \nE → XUVY {V: a = X: a + V: a}; \nY → 4 {Y: a = 4}; \nV → ∈ {V : a = 0}; \nU → ∈ {U : a = 0}; \nX → ∈ {X : a = 0}. \nThe given SDT is",
+        "options": [
+          "Only L-attributed",
+          "Only S-attributed",
+          "Both L and S-attributed",
+          "None of these"
+        ],
+        "answer": "Only L-attributed"
+      },
+      {
+        "id": 19,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "A shift reduce parser performs actions specified with in braces immediately after reducing the corresponding rule of grammar. \nA → bbB {print \"+\"}; \nA → a {print \"*\"}; \nB → Ac {print \"-\"}. \nWhat will be the translation of bbbbbbaccc using the given SDT scheme?",
+        "options": [
+          "+ - + - + - *",
+          "+ - + * - + -",
+          "* - + - + - +",
+          "- + - * - + - 1"
+        ],
+        "answer": "* - + - + - +"
+      },
+      {
+        "id": 20,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "What is the input to the first phase of compiler?",
+        "options": [
+          "Token stream",
+          "Character stream",
+          "Syntax tree",
+          "None of these."
+        ],
+        "answer": "Character stream"
+      },
+      {
+        "id": 21,
+        "type": "msq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Select the functionality of lexical analyzer",
+        "options": [
+          "Lexical analyzer produces syntax error and line number.",
+          "It matches the longest prefix of the identifier.",
+          "It recognizes tokens and produces a stream of lexeme.",
+          "It recognizes white space, comments, and ignore them."
+        ],
+        "answer": ["It matches the longest prefix of the identifier.","It recognizes tokens and produces a stream of lexeme.","It recognizes white space, comments, and ignore them."]
+      },
+      {
+        "id": 22,
+        "type": "nat",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Consider the following program: \nint main ()\n { \n\tprintf(\"%d + %d = %d\", 5, 2, 7); /*sum*/\n\treturn 0;\n }\nHow many numbers of tokens are there in program after preprocessing?",
+        "answer": "20"
+      },
+      {
+        "id": 23,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Match the following phases of the compiler in List I with the input required in List II.\nList I: (a) Lexical analyzer; (b) Syntax analyzer; (c) Semantic analyzer; (d) Code generator.\nList II: (i) Token stream; (ii) Intermediate representation; (iii) Character stream; (iv) Syntax tree.",
+        "options": [
+          "1 – (i); 2 – (ii); 3 – (iv); 4 – (iii)",
+          "1 – (iii); 2 – (i); 3 – (ii); 4 – (iv)",
+          "1 – (i); 2 – (ii); 3 – (iii); 4 – (iv)",
+          "1 – (iii); 2 – (i); 3 – (iv); 4 – (ii)"
+        ],
+        "answer": "1 – (iii); 2 – (i); 3 – (iv); 4 – (ii)"
+      },
+      {
+        "id": 24,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Calculate the token in the following C program using lexical analyzer. \nint main ()\n{\n\tint a, * b;\n\ta = 20;\n\tb = & a;\n\tprintf(\"%d%d\", a, * b);\n}",
+        "options": ["28", "31", "34", "30"],
+        "answer": "31"
+      },
+      {
+        "id": 25,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Which of the following is lexical error.",
+        "options": ["123gate", "gate123", "gate_123", "None of these"],
+        "answer": "123gate"
+      },
+      {
+        "id": 26,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "______ derivation used by top-down parser while parsing any input string.",
+        "options": [
+          "Leftmost derivation",
+          "Rightmost derivation",
+          "Leftmost derivation in reverse.",
+          "Rightmost derivation in reverse."
+        ],
+        "answer": "Leftmost derivation"
+      },
+      {
+        "id": 27,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Which of the following are present in FIRST(S) ∩ FIRST(F)?\n\tS → E;\n\tE → Ff | Gh;\n\tF → ef | Gh | ∈;\n\tG → Gg | ∈",
+        "options": [
+          "{e, f, g, h}",
+          "{e, f, h, ∈}",
+          "{e, g, h, ∈}",
+          "{e, g, h}"
+        ],
+        "answer": "{e, g, h}"
+      },
+      {
+        "id": 28,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Which of the following is valid set of FIRST (E) U FOLLOW (B)? \nS → aBDh; \nB → cC; \nC → bC / ∈; \nD → EF; \nE → g / ∈; \nF → f / ∈",
+        "options": [
+          "{g, f, h, ∈}",
+          "{a, g, f}",
+          "{b, g, h}",
+          "None of these"
+        ],
+        "answer": "{g, f, h, ∈}"
+      },
+      {
+        "id": 29,
+        "type": "nat",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "How many terminals are there in FIRST(A) for the following grammar? \nA → BC | a; \nB → Cb | dB | ε; \nC → aA | g",
+        "answer": "3"
+      }
+    ]
+  }
 ];
