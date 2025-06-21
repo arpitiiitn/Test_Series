@@ -585,9 +585,9 @@ export const mockTests: Test[] = [
   },
   {
     id: 'gate-cs-mock-4',
-    name: 'Compiler Design (Bisic Level)',
-    duration: 30, // 3 hours
-    total_marks: 24,
+    name: 'Compiler Design (Basic Level)',
+    duration: 70, // 3 hours
+    total_marks: 34,
     negative_marking: true,
     questions: [
       {
@@ -595,7 +595,7 @@ export const mockTests: Test[] = [
         "type": "nat",
         "marks": 1,
         "negative_marking": false,
-        "question": "Consider G be a grammar with the following productions: A → A + B | B; B → B * C | C; C → (A); C → id. Let, X is set of lookaheads in A→. B and Y is set of lookaheads in C→ .id. Then how many numbers of items are present in X ∩ Y if LR (1) parser is used?",
+        "question": "Consider G be a grammar with the following productions: \nA → A + B | B; \nB → B * C | C; \nC → (A); \nC → id.\nLet, X is set of lookaheads in A→. B and Y is set of lookaheads in C→ .id. Then how many numbers of items are present in X ∩ Y if LR (1) parser is used?",
         "answer": "3"
       },
       {
@@ -610,7 +610,7 @@ export const mockTests: Test[] = [
           "LR (0) is the least powerful parser.",
           "CLR is powerful that LALR and LR(0) parser."
         ],
-        "answer": ["a", "c", "d"]
+        "answer": ["LALR parser is more powerful the SLR parser.", "LR (0) is the least powerful parser.","CLR is powerful that LALR and LR(0) parser."]
       },
       {
         "id": 3,
@@ -621,26 +621,26 @@ export const mockTests: Test[] = [
         "options": [
           "Every regular grammar is LL(1).",
           "If given grammar G is LL(1) then it is LR(0).",
-          "Let SLR(1) has \( x_1 \) states and CLR(1) has \( x_2 \) states then the relation between \( x_1 \) and \( x_2 \) is \( x_1 < x_2 \).",
+          "Let SLR(1) has \( x1 \) states and CLR(1) has \( x2 \) states then the relation between \( x1 \) and \( x2 \) is \( x1 < x2 \).",
           "Recursive descent parser is a top - down parser."
         ],
-        "answer": ["a", "b", "c"]
+        "answer": ["Every regular grammar is LL(1).", "If given grammar G is LL(1) then it is LR(0).", "Let SLR(1) has \( x1 \) states and CLR(1) has \( x2 \) states then the relation between \( x1 \) and \( x2 \) is \( x1 < x2 \)."]
       },
       {
         "id": 4,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
-        "question": "Consider the given grammar X→ a | ab|abc. The given grammar is ______.",
+        "question": "Consider the given grammar \nX→ a | ab|abc.\nThe given grammar is ______.",
         "options": ["LL(1)", "LL(2)", "LL(3)", "None of these"],
-        "answer": "c"
+        "answer": "LL(3)"
       },
       {
         "id": 5,
         "type": "nat",
         "marks": 1,
         "negative_marking": false,
-        "question": "Consider the following grammar. S’ → S; S’ → S*A | A; A → A+B | B; B → B−C | C; C → (S) | id. If I0 is the set of LR(0) items {[S’→S.] [S→S.*A]}, then goto (closure (I0, *) contains exactly ______ items.",
+        "question": "Consider the following grammar. \nS’ → S; \nS’ → S*A | A; \nA → A+B | B; \nB → B−C | C; \nC → (S) | id.\nIf I0 is the set of LR(0) items {[S’→S.] [S→S.*A]}, then goto (closure (I0, *) contains exactly ______ items.",
         "answer": "7"
       },
       {
@@ -648,7 +648,7 @@ export const mockTests: Test[] = [
         "type": "nat",
         "marks": 2,
         "negative_marking": false,
-        "question": "Consider the given grammar. S → A; A → ABC | BC; B → Cc| b | e; C → e. How many number of unique production are in goto (A→A·BC) ∪ goto (A→ ·BC)?",
+        "question": "Consider the given grammar. \nS → A; \nA → ABC | BC; \nB → Cc| b | e; \nC → e.\nHow many number of unique production are in goto (A→A·BC) ∪ goto (A→ ·BC)?",
         "answer": "4"
       },
       {
@@ -656,73 +656,59 @@ export const mockTests: Test[] = [
         "type": "mcq",
         "marks": 2,
         "negative_marking": false,
-        "question": "Consider the following grammars. G₁: S→aSbS | bSaS|e; G₂: S→aABA; A→c|e; B→d|e. Which of the following is correct?",
+        "question": "Consider the following grammars. \nG₁: S→aSbS | bSaS|e; \nG₂: S→aABA; \n\tA→c|e; \n\tB→d|e. \nWhich of the following is correct?",
         "options": [
           "Only G₁ is LL(1).",
           "Only G₂ is LL(1).",
           "Both G₁ and G₂ are LL(1).",
           "Neither of G₁ and G₂ are LL(1)."
         ],
-        "answer": "b"
+        "answer": "Only G₂ is LL(1)."
       },
       {
         "id": 8,
         "type": "mcq",
         "marks": 2,
         "negative_marking": false,
-        "question": "Consider the following grammar. S → (A | B ) | B); A → B) | B ); B → e. Which of the following is correct statement if CLR(1) parser is used?",
+        "question": "Consider the following grammar. \nS → (A | B ) | B); \nA → B) | B ); \nB → e. \nWhich of the following is correct statement if CLR(1) parser is used?",
         "options": [
           "The given grammar has RR conflict but no SR conflicts.",
           "The given grammar has RR conflict but no RR conflicts.",
           "The given grammar has RR and SR conflicts.",
           "The given grammar do not have RR and SR conflicts."
         ],
-        "answer": "d"
+        "answer": "The given grammar do not have RR and SR conflicts."
       },
       {
         "id": 9,
         "type": "msq",
         "marks": 2,
         "negative_marking": false,
-        "question": "Which of the following statement is/are correct about given language? L = {a' b\" c\" | l = m or m = n , l, m, n >0}",
+        "question": "Which of the following statement is/are correct about given language? \nL = {a' b\" c\" | l = m or m = n , l, m, n >0}",
         "options": [
           "The language is not LR(0).",
           "The language is ambiguous.",
           "The language is not LR(k) for any k.",
           "The language recognizes by DPDA (Deterministic Pushdown Automata.)"
         ],
-        "answer": ["a", "b", "c"]
+        "answer": ["The language is not LR(0).","The language is ambiguous.","The language is not LR(k) for any k."]
       },
       {
         "id": 10,
         "type": "mcq",
         "marks": 2,
         "negative_marking": false,
-        "question": "Consider the given grammar. S → AaB|aA; A→ bB| B; B→ aB|a. If S, A, B are non-terminals and a, b are terminals. The above grammar is?",
+        "question": "Consider the given grammar. \nS → AaB|aA; \nA→ bB| B; \nB→ aB|a. \nIf S, A, B are non-terminals and a, b are terminals. The above grammar is?",
         "options": [
           "LALR(1) but not SLR(1)",
           "CLR(1) but not LALR(1)",
           "CLR(1) and LALR(1)",
           "Neither CLR (1) nor LALR(1)"
         ],
-        "answer": "d"
+        "answer": "Neither CLR (1) nor LALR(1)"
       },
       {
         "id": 11,
-        "type": "mcq",
-        "marks": 1,
-        "negative_marking": false,
-        "question": "The DAG (directed acyclic graph) represents which of the following expression:",
-        "options": [
-          "p $ (q # r) + s",
-          "(p $ q) # (r + s)",
-          "p $ q # r # q # r + s",
-          "(p $ (q # r)) # ((q # r) + s)"
-        ],
-        "answer": "d"
-      },
-      {
-        "id": 12,
         "type": "msq",
         "marks": 1,
         "negative_marking": false,
@@ -733,10 +719,10 @@ export const mockTests: Test[] = [
           "Triples",
           "Indirect triples"
         ],
-        "answer": ["a", "c", "d"]
+        "answer": ["Quadruples", "Triples", "Indirect triples"]
       },
       {
-        "id": 13,
+        "id": 12,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
@@ -747,10 +733,10 @@ export const mockTests: Test[] = [
           "Attribute at siblings only",
           "None of these"
         ],
-        "answer": "b"
+        "answer": "Attribute at children node only"
       },
       {
-        "id": 14,
+        "id": 13,
         "type": "msq",
         "marks": 1,
         "negative_marking": false,
@@ -761,10 +747,10 @@ export const mockTests: Test[] = [
           "Control Flow Graph (CFG)",
           "Symbol table"
         ],
-        "answer": ["a", "b", "c"]
+        "answer": ["Three address code","Directed Acyclic Graph (DAG)","Control Flow Graph (CFG)"]
       },
       {
-        "id": 15,
+        "id": 14,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
@@ -775,74 +761,74 @@ export const mockTests: Test[] = [
           "Symbol table management",
           "None of these"
         ],
-        "answer": "a"
+        "answer": "Dynamic memory allocation"
       },
       {
-        "id": 16,
+        "id": 15,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
-        "question": "Consider the basic block given below: a = b + c; c = a + d; d = b + c; e = d - b; a = e + b. The minimum number of nodes and edges present in the DAG representation of the above basic block respectively are:",
+        "question": "Consider the basic block given below: \na = b + c; \nc = a + d; \nd = b + c; \ne = d - b; \na = e + b. \nThe minimum number of nodes and edges present in the DAG representation of the above basic block respectively are:",
         "options": [
           "6 and 6",
           "4 and 4",
           "8 and 10",
           "9 and 12"
         ],
-        "answer": "a"
+        "answer": "6 and 6"
       },
       {
-        "id": 17,
+        "id": 16,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
-        "question": "Consider the following psedo code: 1 : a = 0; 2 : b = a + 1; 3 : c = c + b; 4 : a = b * 2; 5 : if (a < a) goto 2; 6 : return c. Which of the following is correct live range for variable b?",
+        "question": "Consider the following psedo code: \n1 : a = 0; \n2 : b = a + 1; \n3 : c = c + b; \n4 : a = b * 2; \n5 : if (a < a) goto 2; \n6 : return c. \nWhich of the following is correct live range for variable b?",
         "options": [
           "2 → 3 → 4 → 5",
           "1 → 2 → 3 → 4",
           "3 → 4 → 5 → 2",
           "2 → 3 → 4"
         ],
-        "answer": "d"
+        "answer": "2 → 3 → 4"
       },
       {
-        "id": 18,
+        "id": 17,
         "type": "nat",
         "marks": 1,
         "negative_marking": false,
-        "question": "Consider the following three-addresses code. t1 = a + b; t2 = c + d; t3 = t1 * t2; t4 = t2 + t2; t5 = t4 + t3. What will be the minimum number of temporary variable in equivalent optimized three-address code of above code?",
+        "question": "Consider the following three-addresses code. \nt1 = a + b; \nt2 = c + d; \nt3 = t1 * t2; \nt4 = t2 + t2; \nt5 = t4 + t3. \nWhat will be the minimum number of temporary variable in equivalent optimized three-address code of above code?",
         "answer": "2"
       },
       {
-        "id": 19,
+        "id": 18,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
-        "question": "Consider the following SDT. E → XY {Y: a = X: a}; E → XUVY {V: a = X: a + V: a}; Y → 4 {Y: a = 4}; V → ∈ {V : a = 0}; U → ∈ {U : a = 0}; X → ∈ {X : a = 0}. The given SDT is",
+        "question": "Consider the following SDT. \nE → XY {Y: a = X: a}; \nE → XUVY {V: a = X: a + V: a}; \nY → 4 {Y: a = 4}; \nV → ∈ {V : a = 0}; \nU → ∈ {U : a = 0}; \nX → ∈ {X : a = 0}. \nThe given SDT is",
         "options": [
           "Only L-attributed",
           "Only S-attributed",
           "Both L and S-attributed",
           "None of these"
         ],
-        "answer": "a"
+        "answer": "Only L-attributed"
       },
       {
-        "id": 20,
+        "id": 19,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
-        "question": "A shift reduce parser performs actions specified with in braces immediately after reducing the corresponding rule of grammar. A → bbB {print \"+\"}; A → a {print \"*\"}; B → Ac {print \"-\"}. What will be the translation of bbbbbbaccc using the given SDT scheme?",
+        "question": "A shift reduce parser performs actions specified with in braces immediately after reducing the corresponding rule of grammar. \nA → bbB {print \"+\"}; \nA → a {print \"*\"}; \nB → Ac {print \"-\"}. \nWhat will be the translation of bbbbbbaccc using the given SDT scheme?",
         "options": [
           "+ - + - + - *",
           "+ - + * - + -",
           "* - + - + - +",
           "- + - * - + - 1"
         ],
-        "answer": "c"
+        "answer": "* - + - + - +"
       },
       {
-        "id": 21,
+        "id": 20,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
@@ -853,10 +839,10 @@ export const mockTests: Test[] = [
           "Syntax tree",
           "None of these."
         ],
-        "answer": "b"
+        "answer": "Character stream"
       },
       {
-        "id": 22,
+        "id": 21,
         "type": "msq",
         "marks": 1,
         "negative_marking": false,
@@ -867,50 +853,50 @@ export const mockTests: Test[] = [
           "It recognizes tokens and produces a stream of lexeme.",
           "It recognizes white space, comments, and ignore them."
         ],
-        "answer": ["b", "c", "d"]
+        "answer": ["It matches the longest prefix of the identifier.","It recognizes tokens and produces a stream of lexeme.","It recognizes white space, comments, and ignore them."]
       },
       {
-        "id": 23,
+        "id": 22,
         "type": "nat",
         "marks": 1,
         "negative_marking": false,
-        "question": "Consider the following program: \nint main ()\n { \n\tprintf(\"%d + %d = %d\", 5, 2, 7); /*sum*/ return 0; }. How many numbers of tokens are there in program after preprocessing?",
+        "question": "Consider the following program: \nint main ()\n { \n\tprintf(\"%d + %d = %d\", 5, 2, 7); /*sum*/\n\treturn 0;\n }\nHow many numbers of tokens are there in program after preprocessing?",
         "answer": "20"
       },
       {
-        "id": 24,
+        "id": 23,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
-        "question": "Match the following phases of the compiler in List I with the input required in List II. List I: (a) Lexical analyzer; (b) Syntax analyzer; (c) Semantic analyzer; (d) Code generator. List II: (i) Token stream; (ii) Syntax tree; (iii) Character stream; (iv) Intermediate representation.",
+        "question": "Match the following phases of the compiler in List I with the input required in List II.\nList I: (a) Lexical analyzer; (b) Syntax analyzer; (c) Semantic analyzer; (d) Code generator.\nList II: (i) Token stream; (ii) Intermediate representation; (iii) Character stream; (iv) Syntax tree.",
         "options": [
           "1 – (i); 2 – (ii); 3 – (iv); 4 – (iii)",
           "1 – (iii); 2 – (i); 3 – (ii); 4 – (iv)",
           "1 – (i); 2 – (ii); 3 – (iii); 4 – (iv)",
           "1 – (iii); 2 – (i); 3 – (iv); 4 – (ii)"
         ],
-        "answer": "d"
+        "answer": "1 – (iii); 2 – (i); 3 – (iv); 4 – (ii)"
+      },
+      {
+        "id": 24,
+        "type": "mcq",
+        "marks": 1,
+        "negative_marking": false,
+        "question": "Calculate the token in the following C program using lexical analyzer. \nint main ()\n{\n\tint a, * b;\n\ta = 20;\n\tb = & a;\n\tprintf(\"%d%d\", a, * b);\n}",
+        "options": ["28", "31", "34", "30"],
+        "answer": "31"
       },
       {
         "id": 25,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
-        "question": "Calculate the token in the following C program using lexical analyzer. int main () { int a, * b; a = 20; b = & a; printf(\"%d%d\", a, * b); }",
-        "options": ["28", "31", "34", "30"],
-        "answer": "b"
+        "question": "Which of the following is lexical error.",
+        "options": ["123gate", "gate123", "gate_123", "None of these"],
+        "answer": "123gate"
       },
       {
         "id": 26,
-        "type": "mcq",
-        "marks": 1,
-        "negative_marking": false,
-        "question": "Which of the following is lexical error.",
-        "options": ["123gate", "gate123", "gate_123", "None of these"],
-        "answer": "a"
-      },
-      {
-        "id": 27,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
@@ -921,42 +907,42 @@ export const mockTests: Test[] = [
           "Leftmost derivation in reverse.",
           "Rightmost derivation in reverse."
         ],
-        "answer": "a"
+        "answer": "Leftmost derivation"
       },
       {
-        "id": 28,
+        "id": 27,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
-        "question": "Which of the following are present in FIRST(S) ∩ FIRST(F)? S → E; E → Ff | Gh; F → ef | Gh | ∈; G → Gg | ∈",
+        "question": "Which of the following are present in FIRST(S) ∩ FIRST(F)?\n\tS → E;\n\tE → Ff | Gh;\n\tF → ef | Gh | ∈;\n\tG → Gg | ∈",
         "options": [
           "{e, f, g, h}",
           "{e, f, h, ∈}",
           "{e, g, h, ∈}",
           "{e, g, h}"
         ],
-        "answer": "d"
+        "answer": "{e, g, h}"
       },
       {
-        "id": 29,
+        "id": 28,
         "type": "mcq",
         "marks": 1,
         "negative_marking": false,
-        "question": "Which of the following is valid set of FIRST (E) U FOLLOW (B)? S → aBDh; B → cC; C → bC / ∈; D → EF; E → g / ∈; F → f / ∈",
+        "question": "Which of the following is valid set of FIRST (E) U FOLLOW (B)? \nS → aBDh; \nB → cC; \nC → bC / ∈; \nD → EF; \nE → g / ∈; \nF → f / ∈",
         "options": [
           "{g, f, h, ∈}",
           "{a, g, f}",
           "{b, g, h}",
           "None of these"
         ],
-        "answer": "a"
+        "answer": "{g, f, h, ∈}"
       },
       {
-        "id": 30,
+        "id": 29,
         "type": "nat",
         "marks": 1,
         "negative_marking": false,
-        "question": "How many terminals are there in FIRST(A) for the following grammar? A → BC | a; B → Cb | dB | ε; C → aA | g",
+        "question": "How many terminals are there in FIRST(A) for the following grammar? \nA → BC | a; \nB → Cb | dB | ε; \nC → aA | g",
         "answer": "3"
       }
     ]
